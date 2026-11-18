@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
+  --color-bg: #1e1e1e;
+  --color-panel: #252526;
+  --color-panel-2: #2d2d30;
+  --color-line: #3c3c3c;
+  --color-fg: #d4d4d4;
+  --color-dim: #8a8a8a;
+  --color-accent: #4fc1ff;
+  --color-sel: #264f78;
+  --color-warn: #f48771;
+  --color-ok: #89d185;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color-scheme: dark;
+}
+
+select,
+input,
+button {
+  font: inherit;
+}
+
+.btn {
+  @apply rounded border border-line bg-panel-2 px-2 py-0.5 text-fg hover:border-accent disabled:opacity-40;
+}
+.btn-primary {
+  @apply rounded border border-accent bg-sel px-2 py-0.5 text-white hover:brightness-125 disabled:opacity-40;
+}
+.field {
+  @apply rounded border border-line bg-panel-2 px-1.5 py-0.5 text-fg outline-none focus:border-accent;
+}
+.tab {
+  @apply border-b-2 border-transparent px-3 py-1.5 text-dim hover:text-fg;
+}
+.tab-active {
+  @apply border-accent text-fg;
+}
+.separator {
+  @apply w-1 bg-line transition-colors hover:bg-accent data-[separator=active]:bg-accent;
+}
+.pane-header {
+  @apply flex h-8 shrink-0 items-center gap-2 border-b border-line bg-panel px-2 text-xs;
+}
